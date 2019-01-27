@@ -2,7 +2,7 @@ workflow "New workflow" {
   on = "push"
   resolves = [
     "Deploy",
-    "docker://",
+    "Deploy Studio",
   ]
 }
 
@@ -13,8 +13,8 @@ action "Deploy" {
   ]
 }
 
-action "docker://" {
+action "Deploy Studio" {
   uses = "docker://kmelve/github-actions-sanity-io"
   secrets = ["SANITY_AUTH_TOKEN"]
-  args = "cd studio && sanity deploy"
+  runs = "SANTY_AUTH_TOKEN=$SANTY_AUTH_TOKEN cd studio && sanity deploy"
 }
