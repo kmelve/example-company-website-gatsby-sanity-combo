@@ -8,5 +8,5 @@
       "config": { "distDir": "web/public" }
     }
   ],
-  "alias": ["example-company-website-gatsby-sanity-combo.now.sh"]
+  "alias": ["website-monorepo-with-github-actions.now.sh"]
 }
