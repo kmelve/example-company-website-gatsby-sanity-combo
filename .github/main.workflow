@@ -8,5 +8,6 @@ action "Build" {
   secrets = [
     "ZEIT_TOKEN",
   ]
-  args = "now --team sanity-io"
+  args = "--team sanity-io"
+  runs = "npm run now-deploy"
 }
