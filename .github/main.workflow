@@ -1,6 +1,9 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Deploy"]
+  resolves = [
+    "Deploy",
+    "docker://",
+  ]
 }
 
 action "Deploy" {
@@ -8,4 +11,9 @@ action "Deploy" {
   secrets = [
     "ZEIT_TOKEN",
   ]
+}
+
+action "docker://" {
+  uses = "docker://kmelve/github-actions-sanity-io"
+  secrets = ["SANITY_AUTH_TOKEN"]
 }
