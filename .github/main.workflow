@@ -16,4 +16,5 @@ action "Deploy" {
 action "docker://" {
   uses = "docker://kmelve/github-actions-sanity-io"
   secrets = ["SANITY_AUTH_TOKEN"]
+  args = "cd studio && sanity deploy"
 }
