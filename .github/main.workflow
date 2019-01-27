@@ -1,12 +1,11 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["Build"]
+  resolves = ["Deploy"]
 }
 
-action "Build" {
-  uses = "actions/zeit-now@9fe84d557939d277e0d98318b625bd48d364a89b"
+action "Deploy" {
+  uses = "actions/zeit-now@master"
   secrets = [
     "ZEIT_TOKEN",
   ]
-  args = "now --team sanity-io --token $ZEIT_TOKEN --local-config=./web/now.json"
 }
